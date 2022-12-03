@@ -20,9 +20,6 @@ public class BookController {
     @Inject
     private BookRepository bookRepository;
 
-    @Inject
-    private Logger logger;
-
     @GET
     public List<Book> getAllBoks() {
         return bookRepository.getAllBoks();
@@ -31,7 +28,6 @@ public class BookController {
     @GET
     @Path("{id}")
     public Optional<Book> getBookById(@PathParam("id") int id) {
-        logger.info("Parameter comes through: " + id);
         return bookRepository.getBookById(id);
     }
 
